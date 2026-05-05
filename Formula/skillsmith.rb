@@ -1,4 +1,4 @@
-class BuildAnAgent < Formula
+class Skillsmith < Formula
   desc "Claude Code skills pipeline for building and auditing AI agents"
   homepage "https://github.com/andychanfp/skillsmith"
   url "https://github.com/andychanfp/skillsmith/archive/refs/tags/v1.1.1.tar.gz"
@@ -57,7 +57,7 @@ class BuildAnAgent < Formula
       Open any Claude Code session and type /agent-plan to start planning, or /agent-ship to plan and build in one go.
 
       To update skills to the latest version:
-        brew upgrade build-an-agent
+        brew upgrade skillsmith
 
       If ~/.claude was not found at install time, install Claude Code first:
         https://claude.ai/download

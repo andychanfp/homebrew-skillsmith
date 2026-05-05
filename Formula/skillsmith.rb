@@ -1,8 +1,8 @@
 class BuildAnAgent < Formula
   desc "Claude Code skills pipeline for building and auditing AI agents"
   homepage "https://github.com/andychanfp/skillsmith"
-  url "https://github.com/andychanfp/skillsmith/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "5294eb42495df9db659557ed17e9c3d2dd2916c1583e7c6ed692d814b75f5c5f"
+  url "https://github.com/andychanfp/skillsmith/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "8a9e96085167a7db1396f496750a924cac622eefefc87ee9ea1eb791f4759015"
   license "MIT"
 
   SKILLS = %w[

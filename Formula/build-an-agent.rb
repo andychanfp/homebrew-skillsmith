@@ -1,7 +1,7 @@
 class BuildAnAgent < Formula
   desc "Claude Code skills pipeline for building and auditing AI agents"
-  homepage "https://github.com/andychanfp/build_an_agent"
-  url "https://github.com/andychanfp/build_an_agent/archive/refs/tags/v1.1.0.tar.gz"
+  homepage "https://github.com/andychanfp/skillsmith"
+  url "https://github.com/andychanfp/skillsmith/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "5294eb42495df9db659557ed17e9c3d2dd2916c1583e7c6ed692d814b75f5c5f"
   license "MIT"
 
@@ -24,7 +24,7 @@ class BuildAnAgent < Formula
     SKILLS.each do |skill|
       src = buildpath/".claude/skills/#{skill}"
       next unless src.directory?
-      skill_dst = share/"build-an-agent/skills/#{skill}"
+      skill_dst = share/"skillsmith/skills/#{skill}"
       skill_dst.mkpath
       src.children.each { |f| FileUtils.cp_r(f, skill_dst) }
       FileUtils.rm_rf(skill_dst/"run")
@@ -35,7 +35,7 @@ class BuildAnAgent < Formula
     claude_dir = Pathname.new("#{Dir.home}/.claude")
     unless claude_dir.directory?
       opoo "~/.claude not found — is Claude Code installed? " \
-           "After installing Claude Code, run: brew reinstall build-an-agent"
+           "After installing Claude Code, run: brew reinstall skillsmith"
       return
     end
 
@@ -43,7 +43,7 @@ class BuildAnAgent < Formula
     claude_skills.mkpath
 
     SKILLS.each do |skill|
-      src = share/"build-an-agent/skills/#{skill}"
+      src = share/"skillsmith/skills/#{skill}"
       dst = claude_skills/skill
       dst.rmtree if dst.exist?
       FileUtils.cp_r(src, dst)
@@ -61,7 +61,7 @@ class BuildAnAgent < Formula
 
       If ~/.claude was not found at install time, install Claude Code first:
         https://claude.ai/download
-      Then run: brew reinstall build-an-agent
+      Then run: brew reinstall skillsmith
     EOS
   end
 end
